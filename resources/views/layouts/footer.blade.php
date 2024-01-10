@@ -1,6 +1,6 @@
 
 
-    <footer class="bg-dark text-center text-lg-start text-white">
+    <footer class="mt-5 bg-dark text-center text-lg-start text-white">
     
       <div class="container-fluid ">
 
@@ -42,16 +42,16 @@
   
             <ul class="list-unstyled">
               <li class="mb-2">
-                <a href="#!" class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed"><i class="fa-solid fa-city pe-3" style="color: red"></i></i>Kontingen</a>
+                <a href="{{ route('kontingenWelcome')}}" class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed"><i class="fa-solid fa-city pe-3" style="color: red"></i></i>Kontingen</a>
               </li>
               <li class="mb-2">
-                <a href="#!" class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed"><i class="fa-regular fa-futbol pe-3" style="color: black"></i>Cabang Olahraga</a>
+                <a href="{{ route('caborWelcome')}}" class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed"><i class="fa-regular fa-futbol pe-3" style="color: black"></i>Cabang Olahraga</a>
               </li>
               <li class="mb-2">
-                <a href="#!" class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed"><i class="fa-solid fa-calendar-days pe-3" style="color: green"></i>Jadwal</a>
+                <a href="{{route('jadwalWelcome')}}" class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed"><i class="fa-solid fa-calendar-days pe-3" style="color: green"></i>Jadwal</a>
               </li>
               <li class="mb-2">
-                <a href="#!" class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed"><i class="fa-solid fa-square-poll-horizontal pe-3" style="color: blue"></i>Hasil</a>
+                <a href="{{route('hasilWelcome')}}" class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed"><i class="fa-solid fa-square-poll-horizontal pe-3" style="color: blue"></i>Hasil</a>
               </li>
             </ul>
           </div>
@@ -63,13 +63,13 @@
   
             <ul class="list-unstyled">
               <li class="mb-2">
-                <a href="#!" class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed"><i class="fa-solid fa-medal pe-3" style="color: #ffd700"></i>Emas</a>
+                <a href="{{ route('medaliWelcome')}}" class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed"><i class="fa-solid fa-medal pe-3" style="color: #ffd700"></i>Emas</a>
               </li>
               <li class="mb-2">
-                <a href="#!" class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed"><i class="fa-solid fa-medal pe-3" style="color: #c0c0c0"></i>Perak</a>
+                <a href="{{ route('medaliWelcome')}}" class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed"><i class="fa-solid fa-medal pe-3" style="color: #c0c0c0"></i>Perak</a>
               </li>
               <li class="mb-2">
-                <a href="#!" class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed"><i class="fa-solid fa-medal pe-3" style="color: #A77044"></i>Perunggu</a>
+                <a href="{{ route('medaliWelcome')}}" class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed"><i class="fa-solid fa-medal pe-3" style="color: #A77044"></i>Perunggu</a>
               </li>              
             </ul>
           </div>

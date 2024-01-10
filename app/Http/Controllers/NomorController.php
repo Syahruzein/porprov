@@ -9,6 +9,14 @@ use Yajra\DataTables\Services\DataTable;
 
 class NomorController extends Controller
 {
+    public function getNomorByCabor(Request $request) {
+        $request->validate([
+            'selectCabang'=>'required'
+        ]);
+
+        $nomor = Nomor::select('id', 'name')->where('cabor_id', $request->selectCabang)->get();
+        return response()->json(['success' => 'Nomor berhasil dihapus', 'nomor'=>$nomor], 200);
+    }
     /**
      * Display a listing of the resource.
      */

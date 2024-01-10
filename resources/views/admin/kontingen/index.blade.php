@@ -16,7 +16,7 @@
         <div class="max-w-7xl mx-auto">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    <a class="btn btn-primary mb-3" href="{{route('kontingenCreate')}}">Create</a>
+                    <a class="btn btn-primary mb-3" href="{{route('kontingenCreate')}}">Membuat</a>
 
                     <table id="tableKontingen" class="table table-striped" style="width:100%">
                         <thead>

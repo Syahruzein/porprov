@@ -18,12 +18,17 @@
         <!-- Bootstrap 5 CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+        <!-- Selected -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
         <!-- Theme style -->
         <link rel="stylesheet" href="{{ asset('css/adminlte.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <!-- CSS Tabel Data -->
         <link rel = 'stylesheet' href = 'https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css' >
         <!-- Scripts -->
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased hold-transition sidebar-mini layout-fixed layout-navbar-fixed">
@@ -65,7 +70,16 @@
         <script src='https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js'></script>
         <script src='https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min.js'></script>
         <script src='https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js'></script>
+
+        
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
         <script>
+            // home
+            const routeIndexCaborHome = "{{route('caborHome')}}";
+            const routeIndexJadwalHome = "{{route('jadwalHome')}}";
+            const routeIndexHasilHome = "{{route('hasilHome')}}";
+            const routeIndexKontingenHome = "{{route('kontingenHome')}}";
+            const routeIndexMedaliHome = "{{route('getMedali')}}";
             // cabor
             const routeIndexCabor = "{{route('cabor')}}";
             const routeCreateCabor = "{{route('caborStore')}}";
@@ -74,6 +88,7 @@
             // nomor
             const routeIndexNomor = "{{route('nomor')}}";
             const routeCreateNomor = "{{route('nomorStore')}}";
+            const routeGetNomorByCabor = "{{route('getNomorByCabor')}}";
             const routeEditNomor = "{{route('nomorEdit',['id'=>':id'])}}";
             const routeDeleteNomor = "{{route('nomorDelete',['id'=>':id'])}}";
             // kontingen
@@ -81,6 +96,21 @@
             const routeCreateKontingen = "{{route('kontingenStore')}}";
             const routeEditKontingen = "{{route('kontingenEdit',['id'=>':id'])}}";
             const routeDeleteKontingen = "{{route('kontingenDelete',['id'=>':id'])}}";
+            // atlet
+            const routeIndexAtletKontingenCaborNomor = "{{route('atletKontingenCaborNomor')}}";
+            const routeCreateAtletKontingenCaborNomor = "{{route('atletKontingenCaborNomorStore')}}";
+            const routeGetAtletByNomor = "{{route('getAtletByNomor')}}";
+            const routeEditAtletKontingenCaborNomor = "{{route('atletKontingenCaborNomorEdit',['id'=>':id'])}}";
+            const routeDeleteAtletKontingenCaborNomor = "{{route('atletKontingenCaborNomorDelete',['id'=>':id'])}}";
+            // jadwal
+            const routeIndexJadwal = "{{route('jadwal')}}";
+            const routeStoreJadwal = "{{route('jadwalStore')}}";
+            const routeDeleteJadwal = "{{route('jadwalDelete', ['id'=>':id'])}}";
+            // Hasil
+            const routeIndexHasil = "{{route('hasil')}}";
+            const routeStoreHasil = "{{route('hasilStore')}}";
+            const routeEditHasil = "{{route('hasilEdit', ['id'=>':id'])}}";
+            const routeDeleteHasil = "{{route('hasilDelete', ['id'=>':id'])}}";
         </script>
     </body>
 </html>

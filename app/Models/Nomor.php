@@ -27,4 +27,27 @@ class Nomor extends Model
         // nek misal tipe array perlu tag [] setiap kolom benerr ngene salah duduk nang model e
         return $this->belongsTo(Cabor::class, 'cabor_id', 'id');
     }
+    /**
+     * Get the atlet associated with the Nomor
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function atlet()
+    {
+        return $this->hasOne(Atlet::class, 'nomor_id', 'id');
+    }
+    
+    public function jadwals()
+    {
+        return $this->belongsTo(Jadwal::class, 'id', 'nomor_id');
+    }
+    /**
+     * Get the hasils that owns the Nomor
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function hasils()
+    {
+        return $this->belongsTo(Hasil::class, 'nomor_id', 'id');
+    }
 }

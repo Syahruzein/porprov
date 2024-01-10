@@ -11,17 +11,17 @@
             <li class="nav-item"><a class="nav-link" href="#">
                 <svg class="bi" width="24" height="24"></svg>
             </a></li>
-            <li class="nav-item"><a class="nav-link font-semibold"  href="#">Beranda</a></li>
+            <li class="nav-item"><a class="nav-link font-semibold"  href="{{ route('homeWelcome')}}">Beranda</a></li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle font-semibold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kategori</a>
                 <ul class="dropdown-menu">
-                    <li><a class="nav-link dropdown-item font-semibold" href="#">Jadwal</a></li>
-                    <li><a class="nav-link dropdown-item font-semibold" href="#">Venue</a></li>
+                    <li><a class="nav-link dropdown-item font-semibold" href="{{ route('jadwalWelcome')}}">Jadwal</a></li>
+                    {{-- <li><a class="nav-link dropdown-item font-semibold" href="{{ route('tempatWelcome')}}">Venue</a></li> --}}
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="nav-link dropdown-item font-semibold" href="#">Hasil</a></li>
+                    <li><a class="nav-link dropdown-item font-semibold" href="{{ route('hasilWelcome')}}">Hasil</a></li>
                 </ul>
             </li>
-            <li class="nav-item"><a class="nav-link font-semibold" href="#">Medali</a></li>
+            <li class="nav-item"><a class="nav-link font-semibold" href="{{ route('medaliWelcome')}}">Medali</a></li>
             @if (Route::has('login'))
                 @auth
                         <li><a href="{{ url('/dashboard') }}" class="nav-link font-semibold ">Dashboard</a></li>

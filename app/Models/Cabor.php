@@ -26,4 +26,26 @@ class Cabor extends Model
         // primaryKey Cabor adalah kolom 'id'
         return $this->hasOne(Nomor::class, 'cabor_id', 'id');
     }
+    /**
+     * Get the atlet associated with the Cabor
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function atlet()
+    {
+        return $this->hasOne(Atlet::class, 'cabor_id', 'id');
+    }
+    public function jadwals()
+    {
+        return $this->belongsTo(Jadwal::class, 'id', 'cabor_id');
+    }
+    /**
+     * Get the hasils associated with the Cabor
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function hasils()
+    {
+        return $this->hasOne(Hasil::class, 'cabor_id', 'id');
+    }
 }
