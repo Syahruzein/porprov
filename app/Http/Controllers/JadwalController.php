@@ -20,8 +20,11 @@ class JadwalController extends Controller
      */
     public function index(Request $request)
     {
-        $jadwal = Jadwal::with(['babak','cabors','kontingens','nomors'])->with('atlet_jadwals', function ($q) {
-            $q->with('atlets');
+        $jadwal = Jadwal::with(['babak','cabors','kontingens','nomors'])
+        ->with('atlet_jadwals', function ($q) {
+            $q->with('atlets', function ($q) {
+                $q->with('kontingen');
+            });
         })->get();
         // return $jadwal;
         if($request->ajax()){
@@ -60,7 +63,7 @@ class JadwalController extends Controller
                 if($row->atlet_jadwals != null) {
                     $text='';
                     foreach ($row->atlet_jadwals as $key => $value) {
-                        $text.=$value->atlets->kontingen_id.', ';
+                        $text.=$value->atlets->kontingen->name.', ';
                     }
                 }
                 return $text;
