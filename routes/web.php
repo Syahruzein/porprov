@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CaborController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\NomorController;
 use App\Http\Controllers\KontingenController;
 use App\Http\Controllers\AtletController;
@@ -44,9 +45,13 @@ Route::prefix('/welcome')->group(function () {
     Route::get('/getMedali', [HasilController::class, 'getMedali'])->name('getMedali');
 });
 
-Route::get('/dashboard', function () {
-    return view('admin.dashboard.index', [DashboardController::class, 'index']);
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('admin.dashboard.index', [DashboardController::class, 'index']);
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware(['auth', 'verified'])->prefix('dashboard')->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+});
 
 // Route::get('/cabor', function () {
 //     return view('admin.cabor.index', [CaborController::class, 'index']);

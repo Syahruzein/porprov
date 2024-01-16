@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Atlet;
+use App\Models\Jadwal;
+use App\Models\Kontingen;
+use App\Models\Hasil;
 use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
@@ -16,11 +19,19 @@ class DashboardController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         $data['db_active'] = "dashboard";
         $data['sub_db_active'] = "";
-        return view('dashboard', $data);
+        $jumlah_atlet = Atlet::all()->count();
+        $jumlah_kontingen = Kontingen::all()->count();
+        $jumlah_jadwal = Jadwal::all()->count();
+        $jumlah_hasil = Hasil::all()->count();
+        return view('admin.dashboard.index', $data)
+        ->with('jumlah_atlet', $jumlah_atlet)
+        ->with('jumlah_kontingen', $jumlah_kontingen)
+        ->with('jumlah_jadwal', $jumlah_jadwal)
+        ->with('jumlah_hasil', $jumlah_hasil);
     }
 
     /**
